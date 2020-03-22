@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'minitest-reporters', '~> 1.1', '>= 1.1.11'
 gem 'guard', '~> 2.14'
 gem 'rails-controller-testing'
+gem "bcrypt"
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
