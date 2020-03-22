@@ -1,0 +1,22 @@
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  text-align: center;
+  @include box_sizing;
+}
+
+input {
+height: auto !important;
+}
+
+.btn-primary {
+  width: 170px;
+  margin-left: 150px;
+}
