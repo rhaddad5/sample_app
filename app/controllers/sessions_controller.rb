@@ -4,9 +4,10 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:user][:email].downcase)
+    raise
     if user && user.authenticate(params[:user][:password])
       log_in(user)
-      remember(user)
+      params[:user][:remember_me] == "1" ? remember(user) : forget(user)
       redirect_to user_path(user)
     else
       flash.now[:alert] = "Invalid email/password combination"
