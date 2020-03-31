@@ -2,6 +2,7 @@ roxane:
   name: Roxane Example
   email: roxane@example.com
   password_digest: <%= User.digest("password") %>
+  admin: true
 
 michael:
   name: Michael Example
