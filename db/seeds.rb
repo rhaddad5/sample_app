@@ -10,7 +10,7 @@ puts "Destroying users"
 User.destroy_all
 puts "Users destroyed"
 puts "Creating main user"
-User.create!(name: "Roxane Haddad", email: "roxane.haddad@gmail.com", password: "123456", password_confirmation: "123456")
+User.create!(name: "Roxane Haddad", email: "roxane.haddad@gmail.com", password: "123456", password_confirmation: "123456", admin: true)
 puts "Main user created"
 puts "Creating 99 other users"
 99.times do |n|
