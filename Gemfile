@@ -36,6 +36,8 @@ gem 'guard', '~> 2.14'
 gem 'rails-controller-testing'
 gem "bcrypt"
 gem "faker"
+gem "will_paginate"
+gem "bootstrap-will_paginate"
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
