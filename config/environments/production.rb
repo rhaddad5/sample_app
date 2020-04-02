@@ -1,5 +1,5 @@
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: "<your heroku app>.herokuapp.com" }
+  config.action_mailer.default_url_options = { host: "sample-app-training.herokuapp.com" }
   # Settings specified here will take precedence over those in config/application.rb.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
