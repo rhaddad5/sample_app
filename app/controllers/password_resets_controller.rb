@@ -31,6 +31,7 @@ class PasswordResetsController < ApplicationController
       redirect_to user_path(@user)
     else
       render "edit"
+    end
   end
 
   private
@@ -38,6 +39,7 @@ class PasswordResetsController < ApplicationController
   def user_params
     params.require(:user).permit(:password, :password_confirmation)
   end
+
   def get_user
     @user = User.find_by(email: params[:email])
   end
