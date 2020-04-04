@@ -7,5 +7,10 @@
         <%= @user.name %>
       </h1>
     </div>
+    <%= will_paginate @microposts %>
+    <ol class="microposts">
+      <%= render @microposts %>
+    </ol>
+    <%= will_paginate @microposts %>
   </aside>
 </div>
