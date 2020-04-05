@@ -1,0 +1,4 @@
+<%= simple_form_for @micropost do |f| %>
+  <%= f.input :content, label: false, placeholder: "Compose new micropost..." %>
+  <%= f.button :submit, label: "Post", class: "btn btn-primary" %>
+<% end %>
