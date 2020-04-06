@@ -20,3 +20,15 @@ puts "Creating 99 other users"
   User.create!(name: name, email: email, password: password, password_confirmation: password)
 end
 puts "100 users created"
+puts "Destroying microposts"
+Micropost.destroy_all
+puts "Microposts destroyed"
+puts "Creating microposts"
+users = User.order(:created_at).take(6)
+50.times do
+  content = Faker::Lorem.sentence(word_count: 5)
+  users.each do |user|
+    user.microposts.create!(content: content)
+  end
+end
+puts "Microposts created"
