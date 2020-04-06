@@ -38,6 +38,7 @@ gem "bcrypt"
 gem "faker"
 gem "will_paginate"
 gem "bootstrap-will_paginate"
+gem 'active_storage_validations'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

@@ -22,3 +22,9 @@ require("channels")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 import "bootstrap";
+
+import { micropostImageUpload } from '../components/micropost_image_upload';
+
+document.addEventListener('turbolinks:load', () => {
+  micropostImageUpload();
+});
