@@ -42,6 +42,7 @@ gem 'active_storage_validations'
 gem "image_processing"
 gem "mini_magick"
 gem "cloudinary"
+gem 'sendgrid-ruby'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
