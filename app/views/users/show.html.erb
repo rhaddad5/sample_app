@@ -10,6 +10,9 @@
     <section class="stats">
       <%= render "shared/stats" %>
     </section>
+    <div class="edit-profile">
+      <%= link_to "Edit profile", edit_user_path(@user) %>
+    </div>
   </aside>
   <div class="col-md-8">
     <%= render "follow_form" if logged_in? %>
