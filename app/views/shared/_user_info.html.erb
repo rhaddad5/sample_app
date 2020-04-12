@@ -1,4 +1,8 @@
-<%= link_to gravatar_for(current_user, size: 50), user_path(current_user) %>
+<% if current_user.photo.attached? %>
+  <%= cl_image_tag current_user.photo.key, class: "avatar-large" %>
+<% else %>
+  <%= image_tag "user.png", class: "avatar-large" %>
+<% end %>
 <h1><%= current_user.name %></h1>
 <span><%= link_to "View my profile", user_path(current_user) %></span>
 <span><%= pluralize(current_user.microposts.count, "micropost") %></span>
