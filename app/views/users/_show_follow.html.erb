@@ -2,7 +2,11 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user-info">
-      <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
+      <% else %>
+        <%= image_tag "user.png", class: "avatar-large" %>
+      <% end %>
       <h1><%= @user.name %></h1>
       <span><%= link_to "View my profile", user_path(@user) %></span>
       <span><b>Microposts: </b><%= @user.microposts.count %></span>
@@ -12,10 +16,12 @@
       <% if @users.any? %>
         <div class="user-avatars">
           <% @users.each do |user| %>
-            <% if user.photo.attached? %>
-              <%= cl_image_tag user.photo.key, class: "avatar-large" %>
-            <% else %>
-              <%= image_tag "user.png", class: "avatar-large" %>
+            <%= link_to user_path(user) do %>
+              <% if user.photo.attached? %>
+                <%= cl_image_tag user.photo.key, class: "avatar-large" %>
+              <% else %>
+                <%= image_tag "user.png", class: "avatar-large" %>
+              <% end %>
             <% end %>
             <% end %>
         </div>
