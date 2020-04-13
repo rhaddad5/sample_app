@@ -9,3 +9,11 @@
     color: $blue;
   }
 }
+
+.upload-image {
+  cursor: pointer;
+  font-weight: 500;
+  &:hover {
+    color: $blue;
+  }
+}
