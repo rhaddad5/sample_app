@@ -9,11 +9,12 @@
     margin-top: 5em;
     padding-top: 0;
     a {
+      margin-left: 10px;
       text-decoration: none;
       color: #0E0000;
       font-weight: bolder;
       &:hover {
-        color: $blue;
+        color: $terra-cotta;
       }
     }
   }
@@ -48,5 +49,15 @@ span.image {
   margin-top: 10px;
   input {
     border: 0;
+  }
+}
+
+.delete-link {
+  text-decoration: none;
+  color: #0E0000;
+  margin-left: 60px;
+  &:hover {
+    color: $terra-cotta;
+    text-decoration: none;
   }
 }

@@ -73,9 +73,6 @@ footer {
   border-top: 1px solid #eaeaea; color: #777;
   a{
     color: #555;
-    &:hover {
-      color: #222;
-    }
   }
   small {
     float: left;
@@ -103,3 +100,11 @@ footer {
   @include box_sizing;
 }
 
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+  &:hover {
+    text-decoration: none;
+    color: $terra-cotta !important;
+  }
+}
