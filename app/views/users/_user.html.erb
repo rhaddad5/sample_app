@@ -1,7 +1,7 @@
 <% @users.each do |user| %>
   <li>
     <% if user.photo.attached? %>
-      <%= cl_image_tag user, class: "avatar-large" %>
+      <%= cl_image_tag user.photo.key, class: "avatar-large" %>
     <% else %>
       <%= image_tag "user.png", class: "avatar-large" %>
     <% end %>
