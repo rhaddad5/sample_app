@@ -1,8 +1,10 @@
 <div class="photo-and-name">
-  <% if current_user.photo.attached? %>
-    <%= cl_image_tag current_user.photo.key, class: "avatar-large" %>
-  <% else %>
-    <%= image_tag "user.png", class: "avatar-large" %>
+  <%= link_to user_path(current_user) do %>
+    <% if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key, class: "avatar-large" %>
+    <% else %>
+      <%= image_tag "user.png", class: "avatar-large" %>
+    <% end %>
   <% end %>
   <h1><%= current_user.name %></h1>
 </div>

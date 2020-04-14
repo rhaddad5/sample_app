@@ -1,8 +1,10 @@
 <li id="micropost-<%= micropost.id %>">
-  <% if micropost.user.photo.attached? %>
-    <%= cl_image_tag micropost.user.photo.key, class: "avatar-large" %>
-  <% else %>
-    <%= image_tag "user.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+  <%= link_to user_path(micropost.user) do %>
+    <% if micropost.user.photo.attached? %>
+      <%= cl_image_tag micropost.user.photo.key, class: "avatar-large" %>
+    <% else %>
+      <%= image_tag "user.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <% end %>
   <% end %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
   <span class="content">

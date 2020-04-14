@@ -3,10 +3,12 @@
   <aside class="col-md-4">
     <section class="user-info">
       <h1>
-        <% if @user.photo.attached? %>
-          <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
-        <% else %>
-          <%= image_tag "user.png", class: "avatar-large" %>
+        <%= link_to user_path(@user) do %>
+          <% if @user.photo.attached? %>
+            <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
+          <% else %>
+            <%= image_tag "user.png", class: "avatar-large" %>
+          <% end %>
         <% end %>
         <%= @user.name %>
       </h1>
