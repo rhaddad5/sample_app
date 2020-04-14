@@ -1,13 +1,13 @@
 <% @users.each do |user| %>
   <li>
     <% if user.photo.attached? %>
-      <%= cl_image_tag user, class: "avatar-large" %>
+      <%= cl_image_tag user.photo.key, class: "avatar-large" %>
     <% else %>
       <%= image_tag "user.png", class: "avatar-large" %>
     <% end %>
     <%= link_to user.name, user_path(user) %>
     <% if current_user.admin? && !current_user?(user) %>
-      <%= link_to "Delete", user_path(user), method: :delete, data: { confirm: "Are you sure?" } %>
+      <%= link_to "Delete", user_path(user), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-link" %>
     <% end %>
   </li>
 <% end %>

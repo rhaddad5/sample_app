@@ -1,7 +1,7 @@
 <%= simple_form_for @micropost do |f| %>
   <%= f.input :content, label: false, placeholder: "Compose new micropost..." %>
-  <%= f.button :submit, label: "Post", class: "btn btn-primary" %>
   <span class="image">
-    <%= f.input :image, as: :file, label: false %>
+    <%= f.input :image, as: :file, label: "📷 Add a picture to your post", input_html: {class: 'hidden d-none'}, label_html: { class: 'upload-image'} %>
   </span>
+  <%= f.button :submit, label: "Post", class: "btn btn-primary btn-sample" %>
 <% end %>
