@@ -5,10 +5,10 @@ class UsersController < ApplicationController
 
   def index
     if params[:query].present?
-        @users = User.where("name ILIKE ?", "%#{params[:query]}%").paginate(page: params[:page])
-      else
-        @users = User.paginate(page: params[:page])
-      end
+      @users = User.where("name ILIKE ?", "%#{params[:query]}%").paginate(page: params[:page])
+    else
+      @users = User.paginate(page: params[:page])
+    end
   end
 
   def show
@@ -55,15 +55,24 @@ class UsersController < ApplicationController
   def following
     @title = "Following"
     @user = User.find(params[:id])
-    @users = @user.following.paginate(page: params[:page])
+    if params[:query].present?
+      @users = @user.following.paginate(page: params[:page])
+    else
+      @users = User.paginate(page: params[:page])
+    end
     render "_show_follow"
   end
 
   def followers
     @title = "Followers"
     @user = User.find(params[:id])
-    @users = @user.followers.paginate(page: params[:page])
-    render "_show_follow"
+    if params[:query].present?
+      @users = @user.followers.paginate(page: params[:page])
+      render "_show_follow"
+    else
+      @users = User.paginate(page: params[:page])
+      render "_show_follow"
+    end
   end
 
   private
