@@ -1,8 +1,17 @@
 <% provide(:title, "All users") %>
 <h1>All users</h1>
-<%= will_paginate(:renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
-<ul class="users">
-  <%= render @users %>
-</ul>
-<%= will_paginate(:renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
-
+<div class="user-index">
+  <div class="users-list">
+    <%= will_paginate(:renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+    <ul class="users">
+      <%= render @users %>
+    </ul>
+    <%= will_paginate(:renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+  </div>
+  <div class="search-user">
+    <%= form_tag users_path, method: :get, class: "form-inline" do %>
+      <%= text_field_tag :query, params[:query], placeholder: "Find a user"%>
+      <%= submit_tag "Search", class: "btn btn-primary btn-sample" %>
+    <% end %>
+  </div>
+</div>
