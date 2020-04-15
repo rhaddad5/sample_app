@@ -5,6 +5,7 @@
   font-weight: 500;
   background: white;
   border-radius: 2px;
+  margin-left: 20%;
   &:hover {
     color: $terra-cotta;
   }
@@ -13,6 +14,7 @@
 .upload-image {
   cursor: pointer;
   font-weight: 500;
+  padding-left: 40px;
   &:hover {
     color: $terra-cotta;
   }

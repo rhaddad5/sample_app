@@ -2,6 +2,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
 }
 
 .card-trip > img {
@@ -41,4 +42,14 @@
   position: absolute;
   right: 16px;
   bottom: 22px;
+}
+
+.x-sign {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 50%;
+  padding: 0 6px;
+  color: #777 !important;
 }

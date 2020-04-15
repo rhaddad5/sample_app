@@ -24,7 +24,9 @@ require("channels")
 import "bootstrap";
 
 import { micropostImageUpload } from '../components/micropost_image_upload';
+import { graduallyType } from '../components/typed_js';
 
 document.addEventListener('turbolinks:load', () => {
   micropostImageUpload();
+  graduallyType();
 });

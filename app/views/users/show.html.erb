@@ -2,16 +2,16 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user-info">
-      <h1>
-        <%= link_to user_path(@user) do %>
-          <% if @user.photo.attached? %>
-            <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
-          <% else %>
-            <%= image_tag "user.png", class: "avatar-large" %>
+      <div class="photo-and-name">
+          <%= link_to user_path(@user) do %>
+            <% if @user.photo.attached? %>
+              <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
+            <% else %>
+              <%= image_tag "user.png", class: "avatar-large" %>
+            <% end %>
           <% end %>
-        <% end %>
-        <%= @user.name %>
-      </h1>
+          <h1><%= @user.name %></h1>
+      </div>
     </section>
     <section class="stats">
       <%= render "shared/stats" %>

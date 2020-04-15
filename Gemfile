@@ -36,7 +36,7 @@ gem 'guard', '~> 2.14'
 gem 'rails-controller-testing'
 gem "bcrypt"
 gem "faker"
-gem "will_paginate"
+gem "will_paginate", '~> 3.3.0'
 gem "bootstrap-will_paginate"
 gem 'active_storage_validations'
 gem "image_processing"

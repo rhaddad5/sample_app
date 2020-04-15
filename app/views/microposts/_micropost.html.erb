@@ -19,6 +19,7 @@
 
 <li id="micropost-<%= micropost.id %>">
   <div class="card-trip">
+    <%= link_to "X", micropost_path(micropost), method: :delete, data: {confirm: "Are you sure?"}, class: "delete-link x-sign" %>
     <%= cl_image_tag micropost.image.key, width: 500, height: 500, crop: :limit if micropost.image.attached? %>
     <div class="card-trip-infos">
       <div>

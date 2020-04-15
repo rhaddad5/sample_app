@@ -16,18 +16,22 @@
   }
 }
 
-.user-index {
-  display: flex;
-  justify-content: space-around;
-}
-
 .search-user {
   form {
-    display: flex;
-    align-items: start;
+    justify-content: center;
   }
   input#query {
-    border-radius: 20px;
+    border-radius: 20px 0 0 20px;
     padding: 5px;
+    max-width: 200px;
   }
+  input.btn-search {
+    max-width: 200px;
+    border-radius: 0 20px 20px 0 !important;
+  }
+}
+
+.user-index {
+  display: flex;
+  justify-content: center;
 }
