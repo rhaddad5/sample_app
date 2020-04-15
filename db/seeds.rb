@@ -57,7 +57,7 @@ puts "Destroying relationships"
 Relationship.destroy_all
 puts "Relationships destroyed"
 puts "Creating relationships"
-users = User.all.order
+users = User.all.order(:created_at)
 following = users[1..80]
 followers = users[2..90]
 # following.each do |followed|
