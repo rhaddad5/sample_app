@@ -58,8 +58,8 @@ Relationship.destroy_all
 puts "Relationships destroyed"
 puts "Creating relationships"
 users = User.all
-following = users[0..80]
-followers = users[2..90]
+following = users[0..99]
+followers = users[1..100]
 # following.each do |followed|
 #   user.follow(followed)
 # end
