@@ -1,4 +1,4 @@
-<li id="micropost-<%= micropost.id %>">
+<!-- <li id="micropost-<%= micropost.id %>">
   <%= link_to user_path(micropost.user) do %>
     <% if micropost.user.photo.attached? %>
       <%= cl_image_tag micropost.user.photo.key, class: "avatar-large" %>
@@ -15,4 +15,25 @@
   <% if current_user?(micropost.user) %>
     <%= link_to "Delete", micropost_path(micropost), method: :delete, data: {confirm: "Are you sure?"}, class: "delete-link" %>
   <% end %>
+</li> -->
+
+<li id="micropost-<%= micropost.id %>">
+  <div class="card-trip">
+    <%= cl_image_tag micropost.image.key, width: 500, height: 500, crop: :limit if micropost.image.attached? %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= micropost.content %></h2>
+        <p>Posted <%= time_ago_in_words(micropost.created_at) %> ago.</p>
+      </div>
+      <h2 class="card-trip-pricing"><%= link_to micropost.user.name, micropost.user %></h2>
+      <%= link_to user_path(micropost.user) do %>
+        <% if micropost.user.photo.attached? %>
+          <%= cl_image_tag micropost.user.photo.key, class: "card-trip-user avatar-bordered" %>
+        <% else %>
+          <%= image_tag "user.png", class: "card-trip-user avatar-bordered" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </li>
+
