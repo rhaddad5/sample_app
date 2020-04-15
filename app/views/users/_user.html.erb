@@ -1,15 +1,17 @@
-<% @users.each do |user| %>
-  <li>
-    <%= link_to user_path(user) do %>
-      <% if user.photo.attached? %>
-        <%= cl_image_tag user.photo.key, class: "avatar-large" %>
-      <% else %>
-        <%= image_tag "user.png", class: "avatar-large" %>
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <%= link_to user_path(user) do %>
+        <% if user.photo.attached? %>
+          <%= cl_image_tag user.photo.key, class: "avatar-large" %>
+        <% else %>
+          <%= image_tag "user.png", class: "avatar-large" %>
+        <% end %>
       <% end %>
-    <% end %>
-    <%= link_to user.name, user_path(user) %>
-    <% if current_user.admin? && !current_user?(user) %>
-      <%= link_to "Delete", user_path(user), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-link" %>
-    <% end %>
-  </li>
-<% end %>
+      <%= link_to user.name, user_path(user) %>
+      <% if current_user.admin? && !current_user?(user) %>
+        <%= link_to "Delete", user_path(user), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-link" %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
