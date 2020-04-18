@@ -29,7 +29,7 @@ roxane.photo.attach({
   })
 puts "Main user created"
 puts "Creating 99 other users"
-99.times do |n|
+39.times do |n|
   u = User.create!(name: Faker::Name.name, email: "example#{n}@example.com", password: "sample-password", password_confirmation: "sample-password", admin: false, activated: true, activated_at: Time.zone.now)
   u.photo.attach({
      io: image_fetcher_user,
@@ -42,7 +42,7 @@ Micropost.destroy_all
 puts "Microposts destroyed"
 puts "Creating microposts"
 users = User.order(:created_at)
-3.times do |i|
+2.times do |i|
   content = Faker::Lorem.sentence(word_count: 5, random_words_to_add: 4)
   users.each do |user|
     m = Micropost.create!(content: content, user_id: user.id)
@@ -58,8 +58,8 @@ Relationship.destroy_all
 puts "Relationships destroyed"
 puts "Creating relationships"
 users = User.all
-following = users[0..100]
-followers = users[0..100]
+following = users[0..40]
+followers = users[0..40]
 # following.each do |followed|
 #   user.follow(followed)
 # end
